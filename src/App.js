@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar, Products, Cart, Checkout } from './components';
 import { commerce } from './lib/commerce';
 
+
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [products, setProducts] = useState([]);
@@ -14,9 +15,10 @@ const App = () => {
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
-
     setProducts(data);
   };
+
+
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
@@ -63,6 +65,7 @@ const App = () => {
       setErrorMessage(error.data.error.message);
     }
   };
+
 
   useEffect(() => {
     fetchProducts();

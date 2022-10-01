@@ -61,7 +61,7 @@ const AddressForm = ({ checkoutToken, test }) => {
             <FormInput required name="city" label="City" />
             <FormInput required name="zip" label="Zip / Postal code" />
             <Grid item xs={12} sm={6}>
-              <InputLabel>Shipping Country</InputLabel>
+              <InputLabel>País de envío</InputLabel>
               <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
                 {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
                   <MenuItem key={item.id} value={item.id}>
@@ -71,7 +71,7 @@ const AddressForm = ({ checkoutToken, test }) => {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel>Shipping Subdivision</InputLabel>
+              <InputLabel>Subdivisión de envío</InputLabel>
               <Select value={shippingSubdivision} fullWidth onChange={(e) => setShippingSubdivision(e.target.value)}>
                 {Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name })).map((item) => (
                   <MenuItem key={item.id} value={item.id}>
@@ -81,7 +81,7 @@ const AddressForm = ({ checkoutToken, test }) => {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel>Shipping Options</InputLabel>
+              <InputLabel>Opciones de envío</InputLabel>
               <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
                 {shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_symbol})` })).map((item) => (
                   <MenuItem key={item.id} value={item.id}>
@@ -93,8 +93,8 @@ const AddressForm = ({ checkoutToken, test }) => {
           </Grid>
           <br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button component={Link} variant="outlined" to="/cart">Back to Cart</Button>
-            <Button type="submit" variant="contained" color="primary">Next</Button>
+            <Button component={Link} variant="outlined" to="/cart">Volver al carrito</Button>
+            <Button type="submit" variant="contained" color="primary">Siguiente</Button>
           </div>
         </form>
       </FormProvider>
